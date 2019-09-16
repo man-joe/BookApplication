@@ -23,11 +23,17 @@ public class BookApp {
         Book b1 = new Book();
         Book b2 = new Book("Book1", "Author1", "Description1", 10.0, 5);
 
-        b1.getDisplayText();
-        b2.getDisplayText();
+        System.out.println(b1.getDisplayText());
+        System.out.println(b2.getDisplayText());
 
+        //Testing multipleBookPrices
         System.out.println("Price of 5 books: " + fmt.format(b2.multipleBookPrice(5)));
         System.out.println("Price of 6 books: " + fmt.format(b2.multipleBookPrice(6)));
+
+        //Testing BookDB
+        BookDB bookDB= new BookDB();
+        System.out.println("Get me book with sku: Python1004");
+        System.out.println(bookDB.getBook("Python1004").getDisplayText());
 
     }
 }

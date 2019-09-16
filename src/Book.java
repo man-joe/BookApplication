@@ -76,10 +76,11 @@ public class Book {
         this.numInStock = numInStock;
     }
 
-    public void getDisplayText() {
-        System.out.println("Author: " + author);
-        System.out.println("Title: " + title);
-        System.out.println("Description: " + description);
+    public String getDisplayText() {
+        String displayTxt = "";
+        displayTxt += "Author: " + author + "\n" + "Title: " + title + "\n" + "Description: " + description;
+
+        return displayTxt;
     }
 
     /*
