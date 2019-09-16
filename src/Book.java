@@ -14,7 +14,6 @@ an instance of a Book and print the Author, Title and Description.
 Publish your solution to GitHub and submit your GitHub url as the assignment.
  */
 
-
 public class Book {
     private String title, author, description;
     private double price;
@@ -81,5 +80,20 @@ public class Book {
         System.out.println("Author: " + author);
         System.out.println("Title: " + title);
         System.out.println("Description: " + description);
+    }
+
+    /*
+    Create a method that returns the pricing for a requested number of books. Five books at $20.00 should return $100,
+    if they are in stock. If they are not in stock, that should be handled appropriately (hint - you decide).
+     */
+
+    public double multipleBookPrice(int numOfBooks) {
+        double priceMulti = 0.0;
+        if(numOfBooks > numInStock){
+            System.out.println("ERROR! You requested more books than whats available...");
+        } else{
+            priceMulti = price * numOfBooks;
+        }
+        return priceMulti;
     }
 }
