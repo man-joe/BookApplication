@@ -17,7 +17,24 @@ populated Book class.
 import java.util.HashMap;
 
 public class BookDB {
-    static HashMap<String, Book> theBookDB; //Database that will find Book objects based on SKU
+    private HashMap<String, Book> theBookDB; //Database that will find Book objects based on SKU
+    private Book b;
+
+    public HashMap<String, Book> getTheBookDB() {
+        return theBookDB;
+    }
+
+    public void setTheBookDB(HashMap<String, Book> theBookDB) {
+        this.theBookDB = theBookDB;
+    }
+
+    public Book getB() {
+        return b;
+    }
+
+    public void setB(Book b) {
+        this.b = b;
+    }
 
     public BookDB(){
         theBookDB = new HashMap<>();
@@ -35,6 +52,22 @@ public class BookDB {
                 0));
         theBookDB.put("Rasp1006", new Book("Raspberry Pi Projects for the Evil Genius", "Donald Norris",
                 "A dozen fiendishly fun projects for the Raspberry Pi!", 14.75, 7));
+    }
+    /*
+    Next, you'll add an overloaded constructor and a method.
+    An overloaded constructor is a constructor that takes one or more parameters. You can create multiple constructors
+    as long as the parameter types and counts are unique. Create a constructor  in the BookDB  class that takes an SKU
+    and populates the private member variables. The constructor by default will return the appropriate BookDB object
+    when it is called. You do not need to include a return statement.
+
+    Next, create a method in your Book class called getDisplayText(). It takes no parameters. When called it returns
+    a string containing the author, title and description. Do not use System.out.print() in your class. Simply return
+    the string and let the calling class handle the print statements. You can use this method to print your book
+    information to the console or a file or a web page.
+     */
+    public BookDB(String sku) {
+        this();
+        b = this.getBook(sku);
     }
 
     public Book getBook(String sku) {
